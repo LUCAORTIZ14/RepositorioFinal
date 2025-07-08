@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mis Reservas</title>
+  <link rel="stylesheet" href="/tpi-render/frontTPI/css/style.css" />
+</head>
+
+<body>
+
+  <!-- Bloqueo si no está logueado -->
+  <script>
+    const usuario = JSON.parse(localStorage.getItem("usuarioLogueado"));
+    if (!usuario) {
+      alert("Debes iniciar sesión para ver tus reservas.");
+      window.location.href = "/tpi-render/frontTPI/html/login.html";
+    }
+  </script>
+
+  <header class="navbar">
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/743/743007.png" alt="logo" />
+      <span>RentCar</span>
+    </div>
+    <nav>
+      <a href="/tpi-render/frontTPI/html/index.html">Inicio</a>
+      <a href="/tpi-render/frontTPI/html/vehiculos.html">Vehículos</a>
+      <a href="#">Mis Reservas</a>
+    </nav>
+    <div class="auth-buttons">
+      <button class="login-btn" onclick="logout()">Cerrar Sesión</button>
+    </div>
+  </header>
+
+  <main class="reservas-container">
+    <h2>Mis Reservas</h2>
+    <div id="lista-reservas">
+      <!-- Se llena desde JS -->
+    </div>
+  </main>
+
+  <script>
+    const usuarioActual = Number(localStorage.getItem("userId"));
+    // Mostrar reservas
+    const reservas = () => {
+      const lista = document.getElementById("lista-reservas");
+      let res = [];
+      fetch(
+        `https://tpi-render-3q09.onrender.com/Reserva/activas/${usuarioActual}`
+      )
+        .then((response) => {
+          if (!response.ok) throw new Error("Error en la solicitud");
+          return response.json();
+        })
+        .then((data) => {
+          if (data.length === 0) {
+            lista.innerHTML = "<p>No tienes reservas activas aún.</p>";
+          } else {
+            data.forEach((reserva) => {
+              const card = document.createElement("div");
+              card.className = `card`;
+              card.innerHTML = `
+                <p>Hasta: ${reserva.fecha_devolucion}</p>
+          <p>Desde: ${reserva.fecha_reserva}</p>
+              <br/>
+        `;
+
+              vehiculo(reserva, card);
+              lista.appendChild(card);
+            });
+          }
+        })
+        .catch((error) => {
+          console.error("Hubo un problema con el fetch:", error);
+        });
+    };
+    const vehiculo = (reserva, card) => {
+      fetch(
+        `https://tpi-render-3q09.onrender.com/vehiculos/${reserva.vehiculo_id}`
+      )
+        .then((response) => {
+          if (!response.ok) throw new Error("Error en la solicitud");
+          return response.json();
+        })
+        .then((data) => {
+          const v = document.createElement("div");
+          v.className = `v`;
+          v.innerHTML = `
+          <h3>${data.marca}</h3>
+          <span class="año">MODELO: ${data.modelo}</span>
+          <br/>
+          <span class="año">AÑO: ${data.año}</span>
+          <br/>
+          <span class="año">CAPACIDAD: ${data.capacidad} PERSONAS</span>`;
+
+          card.appendChild(v);
+        });
+    };
+    reservas();
+
+    function logout() {
+      localStorage.removeItem("token");
+      window.location.href = "/tpi-render/frontTPI/hmtl/login.html";
+    }
+  </script>
+</body>
+
+</html>

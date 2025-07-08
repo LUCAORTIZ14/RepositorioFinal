@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MarketPlace</title>  
+
+  <!--=====================================
+  PLUGINS DE CSS
+  ======================================-->
+
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+  
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  
+  <!-- DataTables -->
+  <link rel="stylesheet" href="/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+
+ 
+  <!-- DatePiker -->
+  <link rel="stylesheet" href="/plugins/daterangepicker/daterangepicker.css">
+
+ 
+  <!--=====================================
+  PLUGINS DE JAVASCRIPT
+  ======================================-->
+
+  <!-- jQuery -->
+  <script src="/plugins/jquery/jquery.min.js"></script>
+  
+  <!-- Bootstrap 4 -->
+  <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+      
+  <!-- AdminLTE App -->
+  <script src="/dist/js/adminlte.js"></script>
+
+  <!-- DataTables -->
+  
+  <script src="/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+  
+
+  <!-- SweetAlert 2 -->
+  <script src="/plugins/sweetalert2/sweetalert2.all.js"></script>
+  <!-- By default SweetAlert2 doesn't support IE. To enable IE 11 support, include Promise polyfill:-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+
+  <!-- InputMask -->
+  <script src="/plugins/inputmask/jquery.inputmask.js"></script>
+
+  <!-- daterangepicker -->
+ 
+  <script src="/plugins/daterangepicker/daterangepicker.js"></script>
+  
+  <!-- Select2 -->
+  <script src="/plugins/select2/js/select2.min.js"></script>
+
+  <!-- ChartJS -->
+  <script src="/plugins/chart.js/Chart.js"></script>
+
+   <!--Include HTML-->
+  <script type="module" src="/assets/js/include-html-main/include-html.js"></script>
+  
+  <script type="module" src="/App/index.js"></script>
+
+</head>
+
+<!--=====================================
+CUERPO DOCUMENTO
+======================================-->
+
+<body class="hold-transition sidebar-mini">
+    
+    <div data-include="/assets/modulos/login.html"> </div>
+        
+    <!-- Site wrapper -->
+    <div class="wrapper" id="sitio">
+        <!--=====================================
+                        NAVBAR
+        ======================================-->
+        
+        <div data-include="/assets/modulos/navbar.html"> </div>
+        
+
+        <!--=====================================
+                        ASIDE
+        ======================================-->
+        <div data-include="/assets/modulos/menu.html"> </div>
+        
+        <!--=====================================
+                   CONTENIDO BLANK PAGE
+        ======================================-->  
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="contenidoTitulo">Blank Page</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#" class="rutaMenu">Home</a></li>
+                    <li class="breadcrumb-item active contenidoTituloSec"></li>
+                    </ol>
+                </div>
+                </div>
+            </div><!-- /.container-fluid -->
+            </section>
+            
+            <!-- SPINNER -->
+            <div id="spinner" class="overlay d-none  justify-content-center align-items-center">
+                <i class="fas fa-spinner fa-spin fa-3x"></i>
+            </div> 
+            
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid" id="contenidoPrincipal">
+                         
+                </div>
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+        <!--=====================================
+                        FOOTER
+        ======================================-->
+        <div data-include="/assets/modulos/footer.html"> </div>
+
+
+    </div>  
+    <!-- ./wrapper -->
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+*{
+    margin:0;
+    box-sizing: border-box;
+}
+.contenedorLogin{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 80vh;
+}
+
+.cajaLogin{
+    
+    padding: 2rem;
+    border: 1px solid rgba(128, 128, 128, 0.507);
+    border-radius: 0.3rem;
+    
+}
+
+.cajaLogin p{
+    color: rgb(63, 62, 62);
+    font-size: 3rem;
+    font-weight: 300;
+    padding: 2rem 12rem;
+       
+}
+
+.input-group input{
+    width: 100%;
+    font-size: 1.6rem;
+    margin:1rem 0;
+    border: 1px solid  rgba(128, 128, 128, 0.5);
+    border-radius: 0.3rem;
+    padding:  0.8rem;
+}
+.btnAmarillo{
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 0.2rem;
+   
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    background-color: rgba(248, 187, 7, 1);
+}
+/*Oculto la verificación de contraseña*/
+#reLoginPassword{
+    display: none;
+}
+

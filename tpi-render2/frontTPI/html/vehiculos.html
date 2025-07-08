@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vehículos Disponibles</title>
+  <link rel="stylesheet" href="/tpi-render/frontTPI/css/style.css" />
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/743/743007.png" alt="logo" />
+      <span>RentCar</span>
+    </div>
+    <nav>
+      <a href="/tpi-render/frontTPI/html/index.html">Inicio</a>
+      <a href="/tpi-render/frontTPI/html/vehiculos.html">Vehículos</a>
+      <a href="/tpi-render/frontTPI/html/reservas.html">Mis Reservas</a>
+    </nav>
+    <div class="auth-buttons">
+      <a href="/tpi-render/frontTPI/html/login.html"><button class="login-btn">Iniciar Sesión</button></a>
+      <a href="/tpi-render/frontTPI/html/registro.html"> <button class="register-btn">Registrarse</button></a>
+  </header>
+
+  <main class="vehiculos-container">
+    <h2>Vehículos Disponibles</h2>
+
+    <div class="filtros">
+      <select id="modelo">
+        <option value="todos">modelos</option>
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+      </select>
+
+      <select id="tipo">
+        <option value="todos">marca</option>
+        <option value="FIAT">FIAT</option>
+        <option value="FORD">FORD</option>
+        <option value="CHEVROLET">CHEVROLET</option>
+        <option value="RENAULT">RENAULT</option>
+        <option value="TOYOTA">TOYOTA</option>
+      </select>
+      <select id="categorias">
+        <option value="todos">categoria</option>
+        <option value="SUV">SUV</option>
+        <option value="Familiar">Familiar</option>
+        <option value="Sedán">sedan</option>
+        <option value="chata">chata</option>
+      </select>
+
+      <button id="limpiar">Limpiar Filtros</button>
+    </div>
+
+    <section class="vehicles">
+      <!-- Tarjetas de vehículos -->
+    </section>
+
+    <section class="reservadialogpopup">
+
+      <dialog id="favDialog" class="reserva-dialog">
+        <form method="dialog" class="form-reserva">
+          <h2>Reservar vehículo</h2>
+
+          <label for="fechaReserva">Fecha de reserva:</label>
+          <input type="date" id="fechaReserva" name="fechaReserva" required />
+
+          <label for="fechaDevolucion">Fecha de devolución:</label>
+          <input type="date" id="fechaDevolucion" name="fechaDevolucion" required />
+
+          <div class="dialog-buttons">
+            <button id="cancel">Cancelar</button>
+            <button type="submit">Confirmar</button>
+          </div>
+        </form>
+      </dialog>
+
+    </section>
+
+  </main>
+  <script src="/tpi-render/frontTPI/html/vehiculos.js" refer></script>
+</body>
+
+</html>

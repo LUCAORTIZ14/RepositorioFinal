@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RentCar - Alquiler de Vehículos</title>
+  <link rel="stylesheet" href="/tpi-render/frontTPI/css/style.css" />
+</head>
+<body>
+
+  <!-- Navegación -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/743/743007.png" alt="logo" />
+      <span>RentCar</span>
+    </div>
+    <nav>
+      <a href="/tpi-render/frontTPI/html/index.html">Inicio</a>
+      <a href="/tpi-render/frontTPI/html/vehiculos.html">Vehículos</a>
+      <a href="/tpi-render/frontTPI/html/reservas.html">Mis Reservas</a>
+    </nav>
+    <div class="auth-buttons">
+      <button class="login-btn" onclick="window.location.href='/tpi-render/frontTPI/html/login.html'">Iniciar Sesión</button>
+      <button class="register-btn" onclick="window.location.href='/tpi-render/frontTPI/html/registro.html'">Registrarse</button>
+    </div>
+  </header>
+
+  <!-- inicio principal  -->
+   <section class="hero">
+    <div class="hero-content">
+    <h1>Bienvenido a RentCar</h1>
+    <p>Alquilá vehículos de forma rápida, segura y al mejor precio. Disfrutá de nuestra flota moderna y un servicio pensado para vos.</p>
+    <a href="/tpi-render/frontTPI/html/vehiculos.html" class="btn-ver-vehiculos">Ver Vehículos</a>
+  </div>
+  </section>
+
+    <section class="about">
+      <div class="container">
+        <h2>¿Por qué elegir RentCar?</h2>
+        <ul>
+          <li>✔ Flota moderna con vehículos de todas las gamas</li>
+          <li>✔ Precios accesibles y promociones especiales</li>
+          <li>✔ Reservas 100% online en minutos</li>
+          <li>✔ Atención personalizada y soporte 24/7</li>
+        </ul>
+      </div>
+    </section>
+    <!--preguntas frecuentes -->
+    <section class="faq">
+    <h2>Preguntas Frecuentes</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">¿Qué necesito para alquilar un vehículo?</button>
+      <div class="faq-answer">
+        <p>Para reservar tu coche, tan solo necesita una tarjeta de crédito o débito. Al retirar el vehículo necesitará:<br></br>
+          El vale de confirmación o vale electrónico, como prueba de que la reserva está pagada por adelantado.<br></br>
+          La tarjeta de crédito/débito del conductor principal, con saldo suficiente para cubrir el depósito de seguridad.<br></br>
+          El permiso de conducir del conductor principal, con una antigüedad mínima de 12 meses (en ocasiones, de 24 meses).<br></br>
+          El pasaporte o documento de identidad y cualquier otro documento que el proveedor requiera.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">¿Hay edad mínima para alquilar?</button>
+      <div class="faq-answer">
+        <p>Sí. El conductor debe tener entre 21 y 70 años. En algunos casos se aplican cargos adicionales si el conductor es menor de 25 o mayor de 70.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">¿Puedo reservar para otra persona?</button>
+      <div class="faq-answer">
+        <p>Sí, siempre y cuando la persona que va a conducir cumpla con los requisitos y se registren sus datos durante la reserva.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <script>
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+
+    question.addEventListener('click', () => {
+      const isOpen = answer.style.maxHeight;
+
+      // Cierra todos los demás
+      document.querySelectorAll('.faq-answer').forEach(ans => {
+        ans.style.maxHeight = null;
+        ans.style.paddingBottom = 0;
+      });
+
+      // Alterna la actual
+      if (!isOpen) {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        answer.style.paddingBottom = "1rem";
+      }
+    });
+  });
+  </script>
+
+  
+  
+</body>
+</html>
+

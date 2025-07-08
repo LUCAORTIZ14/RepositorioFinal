@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar Sesión</title>
+  <link rel="stylesheet" href="/tpi-render/frontTPI/css/style.css" />
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/743/743007.png" alt="logo" />
+      <span>RentCar</span>
+    </div>
+    <nav>
+      <a href="/tpi-render/frontTPI/html/index.html">Inicio</a>
+      <a href="/tpi-render/frontTPI/html/vehiculos.html">Vehículos</a>
+      <a href="/tpi-render/frontTPI/html/reservas.html">Mis Reservas</a>
+    </nav>
+    <div class="auth-buttons">
+      <button class="login-btn">Iniciar Sesión</button>
+      <button class="register-btn">Registrarse</button>
+    </div>
+  </header>
+
+  <main class="login-container">
+    <div class="form-card">
+      <h2>Iniciar Sesión</h2>
+      <form id="loginForm">
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" required />
+
+        <button type="submit">Iniciar Sesión</button>
+        <p>¿No tienes cuenta? <a href="/tpi-render/frontTPI/html/registro.html">Regístrate aquí</a></p>
+      </form>
+    </div>
+  </main>
+
+  <script src="/tpi-render/frontTPI/html/login.js"></script>
+</body>
+
+</html>

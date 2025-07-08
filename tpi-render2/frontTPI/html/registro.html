@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro - RentCar</title>
+  <link rel="stylesheet" href="/tpi-render/frontTPI/css/style.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/743/743007.png" alt="logo" />
+      <span>RentCar</span>
+    </div>
+    <nav>
+      <a href="/tpi-render/frontTPI/html/index.html">Inicio</a>
+      <a href="/tpi-render/frontTPI/html/vehiculos.html">Vehículos</a>
+      <a href="/tpi-render/frontTPI/html/reservas.html">Mis Reservas</a>
+    </nav>
+    <div class="auth-buttons">
+      <button class="login-btn" onclick="window.location.href='/tpi-render/frontTPI/html/login.html'">Iniciar
+        Sesión</button>
+      <button class="register-btn"
+        onclick="window.location.href='/tpi-render/frontTPI/html/registro.html'">Registrarse</button>
+    </div>
+  </header>
+
+  <!-- Formulario de Registro -->
+  <main class="registro-container">
+    <div class="registro-card">
+      <h2>Crear Cuenta</h2>
+      <form id="registroForm">
+        <div class="dos-columnas">
+          <input type="text" name="nombre" placeholder="Nombre" required>
+        </div>
+        <input type="email" name="correo" placeholder="Correo electrónico" required>
+        <select name="role" required>
+          <option value="">Seleccionar rol</option>
+          <option value="Cliente">Cliente</option>
+          <option value="Administrador">Administrador</option>
+        </select>
+        <input type="password" name="password" placeholder="Contraseña" required>
+        <button type="submit">Registrarse</button>
+        <p id="mensaje"></p>
+      </form>
+    </div>
+  </main>
+
+  <!-- (Opcional) Footer -->
+  <footer class="footer" style="text-align:center; padding:1rem; background:#fff; margin-top:2rem;">
+    <p>&copy; 2025 RentCar. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Script -->
+  <script src="/tpi-render/frontTPI/html/registro.js"></script>
+
+</body>
+
+</html>

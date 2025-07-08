@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Admin</title>
+  <link rel="stylesheet" href="/tpi-render/frontTPI/css/dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+  <div class="dashboard-container">
+
+    <!-- Encabezado -->
+    <header class="dashboard-header">
+      <h1><i class="fas fa-chart-line"></i> Dashboard de Administración</h1>
+      <div class="user-info">
+        <i class="fas fa-user-shield"></i>
+        <span>Admin</span>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <ul>
+        <li class="active">
+          <a href="#"><i class="fas fa-chart-line"></i>Dashboard</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-car"></i>Vehículos</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-calendar-alt"></i>Reservas</a>
+        </li>
+        <li>
+          <button style="
+                display: flex;
+                background-color: #34495e;
+                border: none;
+                color: #fff;
+                font-size: 15px;
+                gap: 4;
+              " onclick="logout()">
+        <li><a href="/tpi-render/frontTPI/html/login.html"><i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a></li>
+        </button>
+        </li>
+      </ul>
+    </aside>
+
+
+    <!-- Contenido -->
+    <main class="dashboard-content">
+
+      <div class="metrics-grid">
+
+        <!-- Total de vehículos -->
+        <div class="metric-card">
+          <div class="metric-icon">
+            <i class="fas fa-car"></i>
+          </div>
+          <div class="metric-info">
+            <h3>Total de Vehículos</h3>
+            <p class="metric-value" id="totalVehiculos">0</p>
+            <p class="metric-subtext">Vehículos registrados</p>
+          </div>
+        </div>
+
+        <!-- Reservas activas -->
+        <div class="metric-card">
+          <div class="metric-icon">
+            <i class="fas fa-calendar-check"></i>
+          </div>
+          <div class="metric-info">
+            <h3>Reservas Activas</h3>
+            <p class="metric-value" id="reservasActivas">0</p>
+            <p class="metric-subtext">Reservas en curso</p>
+          </div>
+        </div>
+
+        <!-- Categoría con más reservas -->
+        <div class="metric-card">
+          <div class="metric-icon">
+            <i class="fas fa-tags"></i>
+          </div>
+          <div class="metric-info">
+            <h3>Categoría Más Reservada</h3>
+            <p class="metric-value" id="categoriaPopular">-</p>
+            <p class="metric-subtext">Categoría más solicitada</p>
+          </div>
+        </div>
+
+        <!-- Vehículo con más reservas -->
+        <div class="metric-card">
+          <div class="metric-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="metric-info">
+            <h3>Vehículo Más Reservado</h3>
+            <p class="metric-value" id="vehiculoPopular">-</p>
+            <p class="metric-subtext">Vehículo con mayor demanda</p>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <script src="/tpi-render/frontTPI/html/dashboard.js">
+    function logout() {
+      localStorage.removeItem("token");
+      window.location.href = "/tpi-render/frontTPI/html/login.html";
+    }
+  </script>
+</body>
+
+</html>
