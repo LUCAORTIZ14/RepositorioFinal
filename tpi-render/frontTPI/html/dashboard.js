@@ -16,10 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     document.getElementById("reservasActivas").textContent = reserva.length;
 
-    // document.getElementById("categoriaPopular").textContent =
-    //   data.categoria_mas_reservada || "N/A";
-    // document.getElementById("vehiculoPopular").textContent =
-    //   data.vehiculo_mas_reservado || "N/A";
+   
   } catch (error) {
     console.error("Error al cargar indicadores:", error);
   }

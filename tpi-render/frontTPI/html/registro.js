@@ -23,7 +23,7 @@ document.getElementById('registroForm').addEventListener('submit', async functio
     const data = await response.json();
 
     if (response.ok) {
-      // Redirige al usuario a otra página (por ejemplo, login.html)
+      // Redirige al usuario a otra página login.html
       setTimeout(() => { window.location.href = '/tpi-render/frontTPI/html/login.html'; }, 1500);;
     } else {
       document.getElementById('mensaje').textContent = 'Error al crear usuario: ' + data.detail;

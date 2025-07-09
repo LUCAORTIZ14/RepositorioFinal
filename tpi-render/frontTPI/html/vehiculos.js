@@ -1,6 +1,6 @@
 let vehiculosOriginales = [];
 let vehiculoSeleccionadoId = null;
-const usuario_id = 1;
+const usuario_id = Number(localStorage.getItem("userId"));
 
 function generarIdReserva() {
   return Math.floor(10000 + Math.random() * 90000);
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .catch((error) => {
         console.error("Error al hacer reserva:", error);
-        alert("No se pudo completar la reserva.");
+        alert("El vehiculo ya esta reservado en esas fechas.");
       });
   });
 

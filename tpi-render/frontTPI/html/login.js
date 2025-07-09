@@ -21,23 +21,21 @@ document
       const data = await response.json();
 
       if (response.ok) {
-        // ✅ Login exitoso: guardás el token y redirigís
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("userId", data.usuario.id);
+        localStorage.setItem("usuarioLogueado", JSON.stringify(data.usuario)); // 👈 AGREGÁ ESTA LÍNEA
+
         if (data.usuario.rol === "administrador") {
-          localStorage.setItem("token", data.token);
-          localStorage.setItem("userId", data.usuario.id);
           setTimeout(() => {
-            window.location.href = "/tpi-render/frontTPI/html/admin.html"; // Redirigí a donde quieras
+            window.location.href = "/tpi-render/frontTPI/html/admin.html";
           }, 150);
         } else {
-          localStorage.setItem("token", data.token);
-          localStorage.setItem("userId", data.usuario.id);
           setTimeout(() => {
-            window.location.href = "/tpi-render/frontTPI/html/index.html"; // Redirigí a donde quieras
+            window.location.href = "/tpi-render/frontTPI/html/index.html";
           }, 150);
-        } // o 'access_token' según tu API
-      } else {
-        alert("Credenciales incorrectas");
+        }
       }
+
     } catch (error) {
       console.error("Error en el login:", error);
       alert("Ocurrió un error al intentar iniciar sesión");

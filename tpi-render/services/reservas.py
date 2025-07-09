@@ -13,7 +13,10 @@ class ReservaService():
         return self.db.query(ReservaModel).filter(ReservaModel.id == id).first()
 
     def create_reserva(self, reserva: Reserva):
-        # Verificar si ya hay una reserva superpuesta para el mismo vehículo
+        print("---- Reserva recibida ----")
+        print(reserva.dict())  # <<< Esto va a logear lo que llega
+
+        # validación de conflicto
         reservas_conflictivas = (
             self.db.query(ReservaModel)
             .filter(ReservaModel.vehiculo_id == reserva.vehiculo_id)
@@ -25,11 +28,10 @@ class ReservaService():
         if reservas_conflictivas:
             raise Exception("El vehículo ya está reservado en esas fechas")
 
-        # Si no hay conflicto, se guarda la reserva
         new_reserva = ReservaModel(**reserva.dict())
         self.db.add(new_reserva)
         self.db.commit()
-        return
+
 
 
     def delete_reserva(self, id: int):
@@ -42,4 +44,5 @@ class ReservaService():
             self.db.query(ReservaModel)
             .filter(ReservaModel.usuario_id == usuario_id)
             .all()
-        )
+            )
+

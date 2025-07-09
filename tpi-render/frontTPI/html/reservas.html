@@ -102,8 +102,11 @@
 
     function logout() {
       localStorage.removeItem("token");
-      window.location.href = "/tpi-render/frontTPI/hmtl/login.html";
-    }
+      localStorage.removeItem("userId");
+      localStorage.removeItem("usuarioLogueado");
+      window.location.href = "index.html";
+}
+
   </script>
 </body>
 
